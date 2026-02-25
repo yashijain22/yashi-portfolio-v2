@@ -44,7 +44,7 @@ function App() {
               </a>
 
               <a
-                href="/Resume.pdf"
+                href="/Resume Yashi Jain.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition"
