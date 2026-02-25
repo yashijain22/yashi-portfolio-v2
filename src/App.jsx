@@ -1,11 +1,12 @@
 import { motion } from "framer-motion"
+import { Mail, Github, Linkedin } from "lucide-react"
 import profile from "./assets/Yashi.jpeg"
 
 function App() {
   return (
     <div className="bg-white text-slate-800 scroll-smooth">
 
-      {/* NAVBAR */}
+      {/* ===== NAVBAR ===== */}
       <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <h1 className="font-semibold text-lg">Yashi Jain</h1>
@@ -17,7 +18,7 @@ function App() {
         </div>
       </nav>
 
-      {/* HERO */}
+      {/* ===== HERO ===== */}
       <section className="min-h-screen flex items-center pt-24">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
@@ -43,7 +44,7 @@ function App() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 rounded-xl bg-slate-800 text-white hover:bg-slate-700 transition"
@@ -69,22 +70,25 @@ function App() {
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* ===== ABOUT ===== */}
       <section id="about" className="py-24 border-t border-slate-200">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6">
           <h3 className="text-3xl font-semibold mb-12">About</h3>
 
           <div className="grid md:grid-cols-2 gap-16">
 
+            {/* Profile Summary */}
             <div>
               <h4 className="text-xl font-semibold mb-4">Profile Summary</h4>
               <p className="text-slate-600 leading-relaxed">
-                Python Backend Developer experienced in building secure, scalable web applications using FastAPI, Flask, and SQLAlchemy.
-                Strong in REST architecture, JWT authentication, OTP systems, and database optimization.
-                Skilled at writing efficient, maintainable code while enhancing backend performance through structured design principles.
+                Python Backend Developer experienced in building secure and scalable web applications 
+                using FastAPI, Flask, and SQLAlchemy. Strong understanding of REST architecture, 
+                JWT authentication, OTP systems, and database optimization. 
+                Focused on writing efficient, maintainable code while enhancing backend performance.
               </p>
             </div>
 
+            {/* Skills */}
             <div>
               <h4 className="text-xl font-semibold mb-4">Skills</h4>
               <div className="flex flex-wrap gap-3">
@@ -92,13 +96,15 @@ function App() {
                   "Python",
                   "FastAPI",
                   "Flask",
-                  "React",
                   "SQL",
                   "Machine Learning",
-                  "Data Structures & Algorithms",
+                  "Artificial Intelligence",
                   "JWT Authentication",
+                  "React",
+                  "Git",
+                  "Data Structures & Algorithms",
                   "API Integration",
-                  "Git & GitHub"
+                  "OOP"
                 ].map((skill, index) => (
                   <span
                     key={index}
@@ -114,97 +120,94 @@ function App() {
         </div>
       </section>
 
-      {/* PROJECTS */}
+      {/* ===== PROJECTS ===== */}
       <section id="projects" className="py-24 border-t border-slate-200 bg-slate-50">
         <div className="max-w-6xl mx-auto px-6">
           <h3 className="text-3xl font-semibold mb-12">Projects</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
 
-            <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-              <h4 className="font-semibold text-lg">Elysia – AI Powered Chat App</h4>
-              <p className="text-slate-600 mt-3 text-sm">
-                FastAPI backend with JWT authentication, OTP reset, SQLAlchemy ORM, async programming and OpenAI GPT integration.
-              </p>
-              <div className="mt-4 text-xs text-slate-500">
-                Python • FastAPI • OpenAI • SQLAlchemy • JWT • React
+            {[
+              {
+                title: "Elysia – AI Powered Chat App",
+                desc: "FastAPI backend with JWT authentication, OTP reset, SQLAlchemy ORM and OpenAI GPT integration."
+              },
+              {
+                title: "Password Generator Web App",
+                desc: "Secure Flask-based application with authentication, OTP reset and SQLite storage."
+              },
+              {
+                title: "Job Recommendation System",
+                desc: "Web-based job recommendation platform using Python-based logic and backend integration."
+              },
+              {
+                title: "AI Exam Proctoring System",
+                desc: "Computer vision system detecting suspicious activities during online exams."
+              },
+              {
+                title: "AI Powered Personal Finance Assistant",
+                desc: "Intelligent assistant for expense tracking, budgeting insights and financial analysis."
+              },
+              {
+                title: "Task Manager Web App",
+                desc: "CRUD-based task management system with authentication and clean UI design."
+              }
+            ].map((project, index) => (
+              <div
+                key={index}
+                className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition"
+              >
+                <h4 className="font-semibold text-lg">{project.title}</h4>
+                <p className="text-slate-600 mt-3 text-sm">
+                  {project.desc}
+                </p>
               </div>
-            </div>
-
-            <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-              <h4 className="font-semibold text-lg">Password Generator Web App</h4>
-              <p className="text-slate-600 mt-3 text-sm">
-                Secure Flask app with authentication, OTP reset (SendGrid), SQLite storage and deployment.
-              </p>
-              <div className="mt-4 text-xs text-slate-500">
-                Python • Flask • SQLite • Bootstrap
-              </div>
-            </div>
-
-            <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-              <h4 className="font-semibold text-lg">Job Recommendation System</h4>
-              <p className="text-slate-600 mt-3 text-sm">
-                Personalized job suggestion platform using Python-based recommendation algorithms and backend integration.
-              </p>
-              <div className="mt-4 text-xs text-slate-500">
-                Python • ML Logic • Backend
-              </div>
-            </div>
-
-            <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-              <h4 className="font-semibold text-lg">AI Exam Proctoring System</h4>
-              <p className="text-slate-600 mt-3 text-sm">
-                Computer vision based system implementing face detection, head pose tracking and suspicious activity monitoring.
-              </p>
-              <div className="mt-4 text-xs text-slate-500">
-                Python • OpenCV • ML • Computer Vision
-              </div>
-            </div>
-
-            <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-              <h4 className="font-semibold text-lg">AI Powered Personal Finance Assistant</h4>
-              <p className="text-slate-600 mt-3 text-sm">
-                Full-stack finance assistant for expense tracking, budgeting insights and AI-driven analytics.
-              </p>
-              <div className="mt-4 text-xs text-slate-500">
-                Python • Flask • SQLite • Data Analysis
-              </div>
-            </div>
-
-            <div className="border border-slate-200 rounded-2xl p-6 hover:shadow-lg transition">
-              <h4 className="font-semibold text-lg">Task Manager Web App</h4>
-              <p className="text-slate-600 mt-3 text-sm">
-                CRUD-based task management system with authentication and structured backend logic.
-              </p>
-              <div className="mt-4 text-xs text-slate-500">
-                Python • Flask • SQLite
-              </div>
-            </div>
+            ))}
 
           </div>
         </div>
       </section>
 
-      {/* CONTACT */}
+      {/* ===== CONTACT ===== */}
       <section id="contact" className="py-24 border-t border-slate-200">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h3 className="text-3xl font-semibold mb-6">Contact</h3>
 
-          <p className="text-slate-600 mb-6">
-            Open to full-time opportunities and AI-driven projects.
-          </p>
+          <div className="space-y-6 flex flex-col items-center text-slate-700">
 
-          <div className="space-y-3">
-            <p><a href="mailto:yashi2212.jain@gmail.com" className="hover:underline">yashi2212.jain@gmail.com</a></p>
-            <p><a href="tel:6350202035" className="hover:underline">+91 6350202035</a></p>
-            <p><a href="https://linkedin.com/in/yashijain22" target="_blank" rel="noopener noreferrer" className="hover:underline">LinkedIn</a></p>
-            <p><a href="https://github.com/yashijain22" target="_blank" rel="noopener noreferrer" className="hover:underline">GitHub</a></p>
+            <a
+              href="mailto:yashi2212.jain@gmail.com"
+              className="flex items-center gap-3 hover:text-black transition"
+            >
+              <Mail size={20} />
+              <span className="underline">yashi2212.jain@gmail.com</span>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/yashijain22"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:text-black transition"
+            >
+              <Linkedin size={20} />
+              <span className="underline">linkedin.com/in/yashijain22</span>
+            </a>
+
+            <a
+              href="https://github.com/yashijain22"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:text-black transition"
+            >
+              <Github size={20} />
+              <span className="underline">github.com/yashijain22</span>
+            </a>
+
           </div>
-
         </div>
       </section>
 
-      {/* FOOTER */}
+      {/* ===== FOOTER ===== */}
       <footer className="py-10 border-t border-slate-200 text-center text-sm text-slate-500">
         © {new Date().getFullYear()} Yashi Jain
       </footer>
